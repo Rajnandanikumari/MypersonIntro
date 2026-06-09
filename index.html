@@ -439,8 +439,32 @@
 				min-height: auto !important;
 			}
 		}
-	</style>
 
+		@media (max-width: 991px) {
+			.navbar-toggler {
+				display: block !important;
+				border: 1px solid #fff !important;
+			}
+
+			.navbar-toggler span,
+			.navbar-toggler {
+				color: #fff !important;
+			}
+		}
+	</style>
+	<script>
+		$('#ftco-nav').on('show.bs.collapse', function () {
+			$('#menu-icon')
+				.removeClass('oi-menu')
+				.addClass('fa fa-times');
+		});
+
+		$('#ftco-nav').on('hide.bs.collapse', function () {
+			$('#menu-icon')
+				.removeClass('fa fa-times')
+				.addClass('oi oi-menu');
+		});
+	</script>
 
 </head>
 
@@ -451,7 +475,7 @@
 			<a class="navbar-brand" href="index.html">RajNandani Kumari</a>
 			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
+				<span id="menu-icon" class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
@@ -1143,6 +1167,7 @@
 	<script src="js/scrollax.min.js"></script>
 
 	<script src="js/main.js"></script>
+
 
 </body>
 
